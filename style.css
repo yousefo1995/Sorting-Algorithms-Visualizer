@@ -1,0 +1,11 @@
+#chart {
+  display: flex;
+  align-items: end;
+}
+.bar {
+  background-color: rgb(43, 175, 43);
+  display: inline-block;
+  width: 30px;
+  margin-left: 5px;
+  text-align: center;
+}
