@@ -4,23 +4,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Bubble Sort</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Sorting Algorithms Visualizer</h1>
-    <button id="random-btn">Randomize</button>
-    <button id="solve-btn">Solve</button>
-    <input
-      type="range"
-      id="array-Length"
-      value="10"
-      min="0"
-      max="100"
-      onchange="console.log(value)"
-    />
-    <div id="chart">
-      <div class="bar"></div>
+    <div class="container">
+      <h1>Sorting Algorithms Visualizer</h1>
+      <div class="array-value">
+        <label>array value</label>
+        <span id="range-value">10</span>
+      </div>
+
+      <div class="control-container">
+        <div class="btn-container">
+          <button id="random-btn">Randomize</button>
+          <button id="solve-btn">Solve</button>
+        </div>
+        <span id="min-max">0</span>
+        <input
+          type="range"
+          id="array-Length"
+          value="10"
+          min="0"
+          max="100"
+          onchange="console.log(value)"
+        />
+
+        <span id="min-max">100</span>
+      </div>
+
+      <div id="chart"></div>
     </div>
 
     <script src="script.js"></script>

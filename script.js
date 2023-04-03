@@ -2,7 +2,12 @@ let btnRandom = document.getElementById("random-btn");
 let btnSolve = document.getElementById("solve-btn");
 let arrayLength = document.getElementById("array-Length");
 let chart = document.getElementById("chart");
+let rangeValue = document.getElementById("range-value");
 let generatedArray = [];
+
+arrayLength.addEventListener("input", () => {
+  rangeValue.innerHTML = arrayLength.value;
+});
 
 generateRandomArray();
 
@@ -17,7 +22,7 @@ function generateRandomArray() {
   generatedArray = [];
   const length = arrayLength.value;
   for (i = 0; i < length; i++) {
-    generatedArray.push(Math.floor(Math.random() * 100));
+    generatedArray.push(Math.floor(Math.random() * 100) + 1);
   }
   showBars();
 }
@@ -41,7 +46,7 @@ function showBars() {
     const insertBars = document.createElement("div");
     const num = document.createElement("label");
     insertBars.classList.add("bar");
-    insertBars.style.height = `${generatedArray[i] * 5}px`;
+    insertBars.style.height = `${generatedArray[i] * 2}px`;
     num.innerText = generatedArray[i];
     insertBars.appendChild(num);
     chart.appendChild(insertBars);
@@ -50,8 +55,8 @@ function showBars() {
 async function animateBars(index1, index2) {
   const bar1 = chart.children[index1];
   const bar2 = chart.children[index2];
-  bar1.style.backgroundColor = "red";
-  bar2.style.backgroundColor = "red";
+  bar1.style.backgroundColor = "#FDB630";
+  bar2.style.backgroundColor = "#FDB630";
   await sleep(500);
   const temp = bar1.style.height;
   bar1.style.height = bar2.style.height;
@@ -61,8 +66,8 @@ async function animateBars(index1, index2) {
   bar1.innerHTML = bar2.innerHTML;
   bar2.innerHTML = temp2;
 
-  bar1.style.backgroundColor = "green";
-  bar2.style.backgroundColor = "green";
+  bar1.style.backgroundColor = "#acd6e6";
+  bar2.style.backgroundColor = "#acd6e6";
   await sleep(500);
 }
 
